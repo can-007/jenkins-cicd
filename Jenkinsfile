@@ -27,9 +27,8 @@ pipeline {
 	unstable { echo "I am unstable :/" }
 	failure {
 		echo "I failed :("
-		mail to: "can.liu01@sap.com",
-		     subject: "Filed Pipeline: ${currentBuild.fullDisplayName}",
-		     body: "Something is wrong with ${env.BUILD_URL}"
+		echo "Filed Pipeline: ${currentBuild.fullDisplayName}",
+		echo "Something is wrong with ${env.BUILD_URL}"
 	}
 	changed { echo "Things were differet before..." }
     }
