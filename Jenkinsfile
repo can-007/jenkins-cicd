@@ -20,6 +20,11 @@ pipeline {
 		sh 'echo "HOST is ${HOST}"'
             }
         }
+	stage('Deploy - sainity check') {
+	    steps {
+		input "Does the staging environment look ok?"
+	    }
+	}
     }
     post {
 	always { echo "One way or another, I have finished" }
