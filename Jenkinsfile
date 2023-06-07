@@ -7,6 +7,7 @@ pipeline {
                 sh 'node --version'
                 sh '''
                     echo "Multiline shell steps works too"
+                    touch temp.txt
                     ls -lah
                 '''
                 retry(3) {
