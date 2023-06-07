@@ -1,6 +1,9 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent { docker { image 'node:18.16.0-alpine' } }
+    environment {
+	HOST = "www.google.com"
+    }
     stages {
         stage('Build') {
             steps {
@@ -14,6 +17,7 @@ pipeline {
                   sh 'echo "retrying..."'
                   sh './retry.sh'
                 }
+		sh 'echo "HOST is ${HOST}"'
             }
         }
     }
