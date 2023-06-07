@@ -25,7 +25,12 @@ pipeline {
 	always { echo "One way or another, I have finished" }
 	success { echo "I succeeded!" }
 	unstable { echo "I am unstable :/" }
-	failure { echo "I failed :(" }
+	failure {
+		echo "I failed :("
+		mail to: "can.liu01@sap.com",
+		     subject: "Filed Pipeline: ${currentBuild.fullDisplayName}",
+		     body: "Something is wrong with ${env.BUILD_URL}"
+	}
 	changed { echo "Things were differet before..." }
     }
 }
