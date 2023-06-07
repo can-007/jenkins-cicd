@@ -11,6 +11,7 @@ pipeline {
                 '''
                 retry(3) {
                   sh 'echo "retrying..."'
+                  sh './retry.sh'
                 }
             }
         }
