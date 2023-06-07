@@ -27,7 +27,7 @@ pipeline {
 	unstable { echo "I am unstable :/" }
 	failure {
 		echo "I failed :("
-		echo "Filed Pipeline: ${currentBuild.fullDisplayName}",
+		echo "Filed Pipeline: ${currentBuild.fullDisplayName}"
 		echo "Something is wrong with ${env.BUILD_URL}"
 	}
 	changed { echo "Things were differet before..." }
