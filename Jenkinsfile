@@ -13,7 +13,7 @@ pipeline {
                     echo 1 > temp.txt
                     ls -lah
                 '''
-                retry(3) {
+                retry(2) {
                   sh 'echo "retrying..."'
                   sh './retry.sh'
                 }
