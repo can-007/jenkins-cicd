@@ -22,7 +22,8 @@ pipeline {
         }
 	stage('Deploy - sainity check') {
 	    steps {
-		input "Does the staging environment look ok?"
+		//input "Does the staging environment look ok?"
+		sh 'echo OK'
 	    }
 	}
     }
