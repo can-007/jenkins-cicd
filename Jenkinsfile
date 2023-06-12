@@ -18,6 +18,7 @@ pipeline {
                   sh './retry.sh'
                 }
 		sh 'echo "HOST is ${HOST}"'
+		sh 'exit 1'
             }
         }
 	stage('Deploy - sainity check') {
