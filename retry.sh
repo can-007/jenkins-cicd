@@ -1,4 +1,5 @@
 COUNT=$(cat temp.txt)
+echo "COUNT is ${COUNT}"
 if [ $COUNT -ge 3 ]
 then
 	echo "COUNT is 3 or bigger"
