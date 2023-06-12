@@ -24,7 +24,6 @@ pipeline {
 	    steps {
 		//input "Does the staging environment look ok?"
 		sh 'echo OK'
-		sh 'exit 1'
 	    }
 	}
     }
